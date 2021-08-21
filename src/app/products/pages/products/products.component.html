@@ -1,0 +1,18 @@
+<div class="buttons">
+  <a pButton type="button" label="Go To Home" routerLink="/home" icon="pi pi-home"></a>
+  <a pButton type="button" label="Add Product" (click)="goToNewProduct()" icon="pi pi-plus-circle"></a>
+</div>
+
+<h1>My Products</h1>
+<div class="products grid">
+  <ng-container *ngIf="products.length > 0">
+    <app-product class="col-3"
+                 *ngFor="let product of products"
+                 [product]="product"
+                 (editProductOutput)="editProduct(product.Id)"
+                 (deleteProductOutput)="deleteProduct(product.Id)"></app-product>
+  </ng-container>
+  <ng-container *ngIf="products.length <= 0">
+    <h3>No Products are created yet</h3>
+  </ng-container>
+</div>

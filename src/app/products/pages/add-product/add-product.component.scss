@@ -1,0 +1,51 @@
+h2 {
+  text-align: center;
+}
+
+form {
+  margin-top: 4%;
+  .inputs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    .p-float-label,
+    .radio {
+      flex: 0 0 30%;
+      max-width: 30%;
+      &.textarea {
+        flex: 0 0 100%;
+        max-width: 80%;
+        margin-top: 35px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      input, textarea {
+        width: 100%;
+      }
+    }
+    .radio {
+      label {
+        display: inline;
+      }
+      .choices {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 5px;
+        p-radioButton {
+          &:last-child {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+  }
+}
+.p-invalid {
+  color: red;
+}

@@ -1,0 +1,9 @@
+<p-card *ngIf="product" header="{{product.Name}}" subheader="${{product.Amount}} {{product.ProductType}}" class="col-3"
+  styleClass="p-card-shadow">
+  <p>{{product.Description}}</p>
+  <ng-template pTemplate="footer">
+    <p-button label="Edit" (onClick)="editProduct()" icon="pi pi-check"></p-button>
+    <p-button label="Delete" (onClick)="deleteProduct()" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}">
+    </p-button>
+  </ng-template>
+</p-card>

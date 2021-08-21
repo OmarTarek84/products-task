@@ -1,0 +1,28 @@
+<h2>{{mode === 'create' ? 'Add New': "Edit"}} Product</h2>
+<form [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+  <div class="inputs">
+    <span class="p-float-label">
+      <input id="name" type="text" pInputText formControlName="Name">
+      <label for="name">Name</label>
+      <small *ngIf="uniqueNameErr" id="name-help" class="p-invalid">product Name Already Exists</small>
+    </span>
+    <span class="p-float-label">
+      <input id="amount" type="number" pInputText formControlName="Amount">
+      <label for="amount">Amount</label>
+    </span>
+    <div class="radio">
+      <label>Product Type</label>
+      <div class="choices">
+        <p-radioButton name="ProductType" label="Basic" value="Basic" formControlName="ProductType"></p-radioButton>
+        <p-radioButton name="ProductType" label="Premium" value="Premium" formControlName="ProductType"></p-radioButton>
+      </div>
+    </div>
+    <span class="p-float-label textarea">
+      <textarea id="desc" rows="5" pInputTextarea formControlName="Description"></textarea>
+      <label for="desc">Description</label>
+    </span>
+  </div>
+  <div class="submit-btn">
+    <button pButton type="submit" [disabled]="!addProductForm.valid" label="{{mode === 'create' ? 'Add': 'Edit'}} Product"></button>
+  </div>
+</form>
